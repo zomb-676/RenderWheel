@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.github.zomb.forge.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

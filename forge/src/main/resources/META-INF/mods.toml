@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[43,)"
+#issueTrackerURL = ""
+license = "Insert License Here"
+
+[[mods]]
+modId = "particle_storm"
+version = "${version}"
+displayName = "Node Editor"
+authors = "Me!"
+description = '''
+This is an example description! Tell everyone what your mod is about!
+'''
+#logoFile = ""
+
+[[dependencies.particle_storm]]
+modId = "forge"
+mandatory = true
+versionRange = "[43,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.particle_storm]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.3,)"
+ordering = "NONE"
+side = "BOTH"

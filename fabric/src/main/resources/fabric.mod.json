@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "particle_storm",
+  "version": "${versions}",
+  "name": "Node Editor",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "Insert License Here",
+  "icon": "assets/particle_storm/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.github.zomb.fabric.ParticleStormFabric"
+    ]
+  },
+  "mixins": [
+  ],
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.19.3"
+  }
+}
