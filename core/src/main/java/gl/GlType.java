@@ -16,13 +16,13 @@ public enum GlType {
 	FLOAT(Float.BYTES, Float.SIZE, GL46.GL_FLOAT, "Float"),
 	DOUBLE(Double.BYTES, Double.SIZE, GL46.GL_DOUBLE, "Double");
 
-	final int size;
+	final int byteSize;
 	final int bitSize;
 	final int glType;
 	final String name;
 
-	public int typeSize(int count) {
-		return count * size;
+	public int typeByteSize(int count) {
+		return count * byteSize;
 	}
 
 	public int typeBitSize(int count) {

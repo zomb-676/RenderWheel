@@ -34,10 +34,6 @@ public abstract sealed class GLBuffer extends GLObject permits ImmutableBuffer, 
 		return GL46.glCreateBuffers();
 	}
 
-	public void bindAsIndexBuffer() {
-		GL46.glBindBuffer(GL46.GL_ELEMENT_ARRAY_BUFFER, this.getId());
-	}
-
 	protected final void bindingPoint(int targetType, int bindingPoint) {
 		GL46.glBindBufferBase(targetType, bindingPoint, this.getId());
 	}

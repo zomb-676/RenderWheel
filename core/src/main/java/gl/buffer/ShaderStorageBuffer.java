@@ -1,10 +1,11 @@
 package gl.buffer;
 
+import lombok.Getter;
 import org.lwjgl.opengl.GL46;
 
 public final class ShaderStorageBuffer extends ImmutableBuffer {
 
-	private int bindingPoint = -1;
+	@Getter private int bindingPoint = -1;
 
 	private ShaderStorageBuffer(String name, int bufferSize, int bufferUsageFlags) {
 		super(name, bufferSize, bufferUsageFlags);

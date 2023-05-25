@@ -8,19 +8,18 @@ import org.lwjgl.glfw.GLFW;
 import org.lwjgl.nanovg.NVGColor;
 import org.lwjgl.nanovg.NanoVG;
 import org.lwjgl.nanovg.NanoVGGL3;
-import org.lwjgl.opengl.GL45;
 import org.lwjgl.opengl.GL46;
 import resource.ResourceLoader;
 
-public class Main {
+public class ComputeShaderTest {
 	public static void main(String[] args) {
-		var windowPtr = Init.init();
+		var windowPtr = Init.init(1920,1080);
 
 		var positionPosVert = Shader.of(ResourceLoader.ofShaderFile("position_uv.vert"));
 		var positionPosFrag = Shader.of(ResourceLoader.ofShaderFile("position_uv.frag"));
 		var program = Program.of(positionPosVert, positionPosFrag, "position_pos");
 
-		var buffer = MutableBuffer.of("buffer", GlType.FLOAT.typeSize(128), GL46.GL_STREAM_READ);
+		var buffer = MutableBuffer.of("buffer", GlType.FLOAT.typeByteSize(128), GL46.GL_STREAM_READ);
 
 		var vao = VertexArrayObject.of("mainVAO");
 
@@ -33,7 +32,7 @@ public class Main {
 				0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
 		}).flip();
 
-		var index = MutableBuffer.of("index", GlType.INT.typeSize(100), GL46.GL_STREAM_DRAW);
+		var index = MutableBuffer.of("index", GlType.INT.typeByteSize(100), GL46.GL_STREAM_DRAW);
 		index.getBuffer().asIntBuffer().put(new int[]{0, 1, 3, 1, 2, 3}).flip();
 
 		buffer.bufferData(0);
@@ -95,7 +94,7 @@ public class Main {
 
 			NanoVG.nvgEndFrame(context);
 
-			frameBuffer1.blitTo(DefaultFrameBuffer.DEFAULT_FRAMEBUFFER,GLConstant.BufferBit.ALL);
+			frameBuffer1.blitTo(DefaultFrameBuffer.getInstance(),GLConstant.BufferBit.ALL);
 
 			GLFW.glfwSwapBuffers(windowPtr);
 			GLFW.glfwPollEvents();

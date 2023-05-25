@@ -25,7 +25,7 @@ public class UniformCache implements Closeable {
 
 	private int queryLocation(String uniformName) {
 		var id = GL46.glGetUniformLocation(this.program.getId(), uniformName);
-		Asserts.check(id >= 0, "can't get uniform:" + uniformName + " from program:" + program.getName());
+		Asserts.check(id >= 0, "can't get uniform:" + uniformName + " from program:" + program.getName() + "or it maybe optimized as it is not used");
 		return id;
 	}
 

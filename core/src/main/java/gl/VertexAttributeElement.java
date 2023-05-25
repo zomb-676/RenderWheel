@@ -110,7 +110,7 @@ public final class VertexAttributeElement {
 			Asserts.notNull(type, "type must be set for VertexAttributeElement");
 			Asserts.check(count != -1, "count must be set for VertexAttributeElement");
 			Asserts.check(hasNormalizedBeenSet, "needNormalize/noNeedNormalize must be called");
-			return new VertexAttributeElement(name, type.glType, count, type.size * count, needNormalize, divisor);
+			return new VertexAttributeElement(name, type.glType, count, type.byteSize * count, needNormalize, divisor);
 		}
 
 	}

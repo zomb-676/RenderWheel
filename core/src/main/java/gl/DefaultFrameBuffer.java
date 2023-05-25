@@ -5,7 +5,11 @@ import org.jetbrains.annotations.Nullable;
 
 public class DefaultFrameBuffer extends FrameBuffer {
 
-	public static final DefaultFrameBuffer DEFAULT_FRAMEBUFFER = new DefaultFrameBuffer();
+	private static final DefaultFrameBuffer DEFAULT_FRAMEBUFFER = new DefaultFrameBuffer();
+
+	public static FrameBuffer getInstance() {
+		return DEFAULT_FRAMEBUFFER;
+	}
 
 	private DefaultFrameBuffer() {
 		super("DefaultFrameBuffer");
